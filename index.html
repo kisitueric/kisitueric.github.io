@@ -16,8 +16,8 @@
 
 <style type="text/css">
 html body {
-margin:0px;
-padding:0px;}
+margin:0;
+padding:0;}
 * { 
 box-sizing: border-box
 }
@@ -43,9 +43,67 @@ color:pink; border:1px dotted blue}
 max-width: 100%;
 height: 100%;
 }
-footer {
-background-color: rgba(0,0,0,0.5) ;
-}
+
+
+body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+    main {
+      flex: 1 0 auto;
+    }
+    footer {
+      color: #fff;
+      background: #333;
+      position: relative; /* required to position the copyright at the bottom */
+      font-size: 80%;
+    }
+    .footer-copyright {
+      width: 100%;
+      height: 40px;
+      background: #111;
+      /* positions the copyright at the bottom of the footer */
+      padding: 10px;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+    }
+    .footer-body {
+      margin-bottom: 40px;
+    }
+      /* the clearfix hack */
+    .footer-body::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    /* float the divs */
+    .footer-body > div {
+      float: left;
+      padding: 20px;
+    }
+    /* sets the width of the first column */
+    .footer-body > div:first-child {
+      font-size: 150%;
+      width: 35%;
+      text-align: center;
+    }
+    /* sets the width of the second column */
+    .footer-body > div:last-child {
+      width: 65%;
+    }
+    .footer-body ul {
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px;
+      text-align: center;
+    }
+    .footer-body li > a {
+      color: white;
+      text-decoration: none;
+      margin-bottom: 7px;
+    }
 	</style>
 
 </head>
@@ -176,13 +234,23 @@ border-radius: 5px; float: right; color: gold;text-weight: bold; text-size:20px;
 <a href="https://whatsapp.com/channel/0029Vaxzabt0rGiOkdbhFI1B"> <img src="com.whatsapp.png" style="width: 20px; height: 20px" />
  <a href="https://t.me/yowebsitemaster"> <img src="telegram.png" style="width: 20px; height: 20px" />
 <br/> 
-<hr/>
-
-<a href="about.html" style="float: left; font-style: italics"> ABOUT AUTHOR </a>
-  <img src="ericprofile.jpg" style=" float:left;width:80px; height: 100px;"  alt="I am Kisitu Eric at Your Service" />
 </p>
 
-<div style=" border-ratio:3px; padding:10px; border: none; background-color: rgba(0,0,0,1); color: White; width:100%; font-size: 20px;"> &reg;YO WEBSITES MASTER UGANDA </div>
+<div class=" footer-body">
+<ul style="list-style-type: none">
+<li>
+<a href="about.html"> ABOUT AUTHOR </a>
+  <img src="ericprofile.jpg" style=" float:left;width:80px; height: 100px;"  alt="I am Kisitu Eric at Your Service" /></li>
+
+<li> Contacts</li>
+<li> Pricing </li>
+<li> Testimonies </li>
+<li> Sign up </li>
+<li> Sign in </li>
+</ul>
+</div>
+
+<div class=" footer-copyright"> &reg;YO WEBSITES MASTER UGANDA </div>
 </footer>
 </body>
 </html>
