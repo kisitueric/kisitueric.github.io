@@ -13,7 +13,7 @@
     }
 
     header.background-image {
-      background-image: url('./gallery/etech4.gif');
+      background-image: url('https://kisitu.work.gd/images/etech.gif');
       background-size: cover;
       background-position: center;
       height: 100vh;
@@ -61,31 +61,71 @@
       font-size: 1.5em;
       display: inline;
     }
+/* Loader background */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background: transparent; /* background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Modern Apple/Android style spinner */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #e0e0e0;
+  border-top: 6px solid #007aff; /* iOS blue */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animation keyframes */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
   </style>
 </head>
 <body>
   <header class="background-image">
     <div class="text-container">
-      <h1 id="home" class="animated-text title-poppins"><i src="./gallery/etech7.png" width="90" height="80" alt="Etech logo">E</i>TECH</h1>
+      <h1 id="home" class="animated-text title-poppins"><i src="https://kisitu.work.gd/images/logo.png" width="300" height="200" alt="Etech logo">E</i>TECH</h1>
       <div class="line"></div>
 
-      <p><img src="./gallery/etech6.png" width="90" height="80" alt="Etech logo"></p>
+      <p><img src="https://kisitu.work.gd/images/banner.png" width="220px" height="150px" alt="Etech logo"></p>
 
       <h2 class="act">
-        <img src="./gallery/etech7.png" width="50" height="50" alt=" icon">
+        <img src="https://kisitu.work.gd/images/bg.png" width="50" height="50" alt=" icon">
         All IT, Systems Analysis, Maintenance, Website Developer, Graphics Designer & Business
       </h2>
 
       <div class="line3"></div>
-<h3>Click the link or wait to be redirected automatically to our Landing Page</h3>
+<h3> Loading Landing Page...</h3>
       <h4 class="act">
-        <img src="./gallery/etech5.png" width="70" height="60" alt=" icon">
+        <img src="https://kisitu.work.gd/images/profile.png" width="70" height="60" alt=" icon">
         You’ll be redirected in <span class="countdown-number" id="countdown">7</span> seconds…
       </h4>
 
       <p class="countdown-text">
-        If you haven't already, you'll be sent to our Portfolio site:<br>
-        <strong><a href="https://www.etech.linkpc.net" style="color: #00ffff;">www.etech.linkpc.net</a></strong>
+        <div id="loader">
+  <div class="spinner"></div>
+</div>
+
+<!-- Your site content -->
+<div id="content" style="display:none;">
+  <!-- rest of your page -->
+</div>
+
+        <br>
+        <strong><a href="https://home.kisitu.work.gd" style="color: #00ffff;">www.home.kisitu.work.gd</a></strong>
       </p>
     </div>
   </header>
@@ -99,7 +139,7 @@
       countdownElement.textContent = countdown;
       if (countdown <= 0) {
         clearInterval(timer);
-        window.location.href = "https://www.etech.linkpc.net";
+        window.location.href = "https://home.kisitu.work.gd/EtechLandingPage/landingpage.html"; // Redirect to the landing page
       }
     }, 1000);
   </script>
